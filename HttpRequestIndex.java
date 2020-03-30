@@ -1,4 +1,5 @@
 public class HttpRequestIndex extends HttpRequest{
+    private int count= 0;
     public Boolean parseIndex(){
         for(final String line:urlContent){
             parseLine(line);
@@ -11,13 +12,6 @@ public class HttpRequestIndex extends HttpRequest{
 
         final String[] subString= line.split("\"");
 
-        if(subString.length>0){
-            int n=0;
-            for(final String s:subString){
-                System.out.println("Substring: "+n+"= "+s);
-                n++;
-            }
-        }
         //Substring 11 is the Contact URL we want to do a HttpRequest
         if(subString.length>11){
             //Substring 9 is "ContactURL"
@@ -30,9 +24,11 @@ public class HttpRequestIndex extends HttpRequest{
                 HttpRequest request= new HttpRequest();
                 if(request.readURL(URL)){
                     System.out.println(request);
+                    count++;
                 }
                 
             }
+            System.out.println("Total URLs found: "+count);
         }
     }
 }

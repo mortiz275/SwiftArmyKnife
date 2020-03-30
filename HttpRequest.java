@@ -39,6 +39,7 @@ public class HttpRequest {
 
     public String toString() {
         String returnValue = "URL: "+requestURL;
+        System.out.println("");
         for (String s : urlContent) {
             returnValue = returnValue + s + "\n";
         } 
