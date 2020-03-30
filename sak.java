@@ -8,11 +8,6 @@ public class sak{
             System.out.println("");
             Help.printHelp();
 
-        }if(args.length>=1){
-            System.out.println("Innapropiate command. Please try again");
-            System.out.println("Check below for all the commands or execute -Help");
-            Help.printHelp();
-
         }else if(args[0].equalsIgnoreCase("-Help")){
             System.out.println("Executing Help...");
             Help.printHelp();
